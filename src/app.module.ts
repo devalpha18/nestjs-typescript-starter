@@ -13,6 +13,6 @@ export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(LoggerMiddleware)
-      .forRoutes({ path: 'cats', method: RequestMethod.POST });
+      .forRoutes({ path: 'cats', method: RequestMethod.ALL });
   }
 }
