@@ -6,7 +6,7 @@ import { CatsModule } from './cats.module';
 import { LoggerMiddleware } from './logger.middleware';
 
 @Module({
-  imports: [CatsModule, MongooseModule.forRoot('mongodb://localhost/nest')],
+  imports: [CatsModule, MongooseModule.forRoot('mongodb://localhost:27017/nest')],
   controllers: [AppController],
   providers: [AppService],
 })
