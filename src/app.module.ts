@@ -1,11 +1,12 @@
 import { Module, NestModule, RequestMethod, MiddlewareConsumer } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatsModule } from './cats.module';
 import { LoggerMiddleware } from './logger.middleware';
 
 @Module({
-  imports: [CatsModule],
+  imports: [CatsModule, MongooseModule.forRoot('mongodb://localhost/nest')],
   controllers: [AppController],
   providers: [AppService],
 })
